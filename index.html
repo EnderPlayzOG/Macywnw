@@ -1,0 +1,1103 @@
+<!DOCTYPE html><html lang="en"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Matic Host - Premium Hosting Solutions</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700&family=Rajdhani:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/all.min.css">
+    <script src="js/particles.min.js"></script>
+    <style>
+        :root {
+            --primary: #00eaff;
+            --secondary: #ff61a6;
+            --dark: #0f0f1f;
+            --darker: #0a0a15;
+            --light: #f1f1f1;
+            --gradient: linear-gradient(135deg, var(--primary), var(--secondary));
+            --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            transition: var(--transition);
+        }
+
+        body {
+            font-family: 'Rajdhani', sans-serif;
+            color: var(--light);
+            background-color: var(--darker);
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+
+        /* Improved Top Bar */
+        .top-bar {
+            background: rgba(0, 0, 0, 0.95);
+            padding: 0.8rem 1.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 15px rgba(0, 255, 255, 0.2);
+            position: fixed;
+            width: 100%;
+            z-index: 1000;
+            backdrop-filter: blur(8px);
+            border-bottom: 1px solid rgba(0, 234, 255, 0.2);
+        }
+
+        .logo img {
+            height: 2.5rem;
+            filter: drop-shadow(0 0 8px rgba(0, 234, 255, 0.7));
+        }
+
+        /* Mobile Menu Button */
+        .menu-toggle {
+            display: none;
+            background: transparent;
+            border: none;
+            color: var(--primary);
+            font-size: 1.5rem;
+            cursor: pointer;
+            z-index: 1001;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 0.8rem;
+            align-items: center;
+            font-family: 'Orbitron', sans-serif;
+        }
+
+        .nav-links a {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            padding: 0.6rem 0.9rem;
+            border-radius: 6px;
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .nav-links a::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--primary);
+            transition: var(--transition);
+        }
+
+        .nav-links a:hover {
+            color: white;
+            text-shadow: 0 0 8px rgba(0, 234, 255, 0.8);
+        }
+
+        .nav-links a:hover::before {
+            width: 100%;
+        }
+
+        .nav-links .ddos-link {
+            background: var(--gradient);
+            color: white;
+            font-weight: bold;
+            border-radius: 6px;
+            padding: 0.6rem 1rem;
+            box-shadow: 0 0 15px rgba(0, 234, 255, 0.5);
+            animation: pulse 2s infinite;
+        }
+
+        .nav-links .ddos-link:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 0 20px var(--primary), 0 0 30px var(--secondary);
+        }
+
+        @keyframes pulse {
+            0% { box-shadow: 0 0 15px rgba(0, 234, 255, 0.5); }
+            50% { box-shadow: 0 0 25px rgba(255, 97, 166, 0.7); }
+            100% { box-shadow: 0 0 15px rgba(0, 234, 255, 0.5); }
+        }
+
+        /* Particle Background */
+        .particle-background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            z-index: -1;
+            opacity: 0.7;
+        }
+
+        /* Hero Section */
+        header {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
+                        url('https://images.unsplash.com/photo-1639762681057-408e52192e55?q=80&w=2232&auto=format&fit=crop') center/cover no-repeat;
+            padding: 8rem 1.5rem 6rem;
+            text-align: center;
+            color: white;
+            position: relative;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        header h1 {
+            font-family: 'Orbitron', sans-serif;
+            font-size: clamp(2rem, 6vw, 3.5rem);
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            margin-bottom: 1.5rem;
+            text-shadow: 0 0 15px rgba(255, 255, 255, 0.9), 0 0 25px rgba(0, 255, 255, 0.7);
+            animation: fadeInUp 1s ease-out;
+            line-height: 1.2;
+        }
+
+        header p {
+            font-size: clamp(1rem, 2vw, 1.2rem);
+            margin: 0 auto;
+            max-width: 800px;
+            opacity: 0.9;
+            animation: fadeInUp 1s ease-out 0.3s both;
+            margin-bottom: 2rem;
+            padding: 0 1rem;
+        }
+
+        @keyframes fadeInUp {
+            0% { opacity: 0; transform: translateY(30px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+
+        /* CTA Button */
+        .cta-button {
+            padding: 1rem 2rem;
+            background: var(--gradient);
+            color: white;
+            border: none;
+            border-radius: 50px;
+            font-size: 1rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            cursor: pointer;
+            box-shadow: 0 5px 25px rgba(0, 234, 255, 0.5);
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+            animation: glowAnimation 3s ease-out infinite alternate;
+            font-family: 'Orbitron', sans-serif;
+            letter-spacing: 1px;
+        }
+
+        .cta-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, var(--secondary), var(--primary));
+            opacity: 0;
+            z-index: -1;
+            transition: var(--transition);
+        }
+
+        .cta-button:hover::before {
+            opacity: 1;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 30px rgba(255, 97, 166, 0.6);
+        }
+
+        @keyframes glowAnimation {
+            0% { box-shadow: 0 5px 25px rgba(0, 234, 255, 0.5); }
+            50% { box-shadow: 0 5px 35px rgba(255, 97, 166, 0.7); }
+            100% { box-shadow: 0 5px 25px rgba(0, 234, 255, 0.5); }
+        }
+
+        /* Main Content */
+        main {
+            padding-top: 1rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Hosting Plans Section */
+        .hosting-plans {
+            padding: 4rem 1.5rem;
+            background-color: rgba(15, 15, 31, 0.9);
+            text-align: center;
+            margin: -3rem auto 0;
+            max-width: 1200px;
+            border-radius: 12px;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6);
+            border: 1px solid rgba(0, 234, 255, 0.1);
+            position: relative;
+        }
+
+        .hosting-plans::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: var(--gradient);
+        }
+
+        .hosting-plans h2 {
+            font-size: clamp(1.5rem, 3vw, 2.2rem);
+            margin-bottom: 2rem;
+            color: var(--primary);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-family: 'Orbitron', sans-serif;
+        }
+
+        .pricing-table {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            justify-content: center;
+            margin: 0 auto;
+            max-width: 1100px;
+        }
+
+        .pricing-plan {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 12px;
+            padding: 1.8rem;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+            text-align: center;
+            backdrop-filter: blur(15px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .pricing-plan::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: var(--gradient);
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: var(--transition);
+        }
+
+        .pricing-plan:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0, 234, 255, 0.3);
+        }
+
+        .pricing-plan:hover::after {
+            transform: scaleX(1);
+        }
+
+        .pricing-plan h3 {
+            font-size: 1.4rem;
+            margin-bottom: 1rem;
+            color: var(--primary);
+            font-family: 'Orbitron', sans-serif;
+        }
+
+        .pricing-plan .price {
+            font-size: 1.8rem;
+            color: var(--secondary);
+            margin: 1.2rem 0;
+            font-weight: 600;
+        }
+
+        .pricing-plan .features {
+            margin: 1.5rem 0;
+            text-align: left;
+            padding-left: 1.5rem;
+        }
+
+        .pricing-plan .features li {
+            margin-bottom: 0.5rem;
+            position: relative;
+            list-style-type: none;
+        }
+
+        .pricing-plan .features li::before {
+            content: '✓';
+            color: var(--primary);
+            position: absolute;
+            left: -1.5rem;
+        }
+
+        .pricing-plan .cta-button {
+            width: 100%;
+            padding: 0.8rem;
+            font-size: 0.9rem;
+            margin-top: 1rem;
+            background: rgba(0, 234, 255, 0.1);
+            border: 1px solid var(--primary);
+        }
+
+        .pricing-plan .cta-button:hover {
+            background: var(--gradient);
+            border-color: transparent;
+        }
+
+        /* Reviews Section */
+        .reviews-section {
+            background: rgba(15, 15, 31, 0.9);
+            padding: 4rem 1.5rem;
+            text-align: center;
+            backdrop-filter: blur(10px);
+            margin: 3rem auto;
+            max-width: 1200px;
+            border-radius: 12px;
+            box-shadow: 0 15px 50px rgba(0, 255, 255, 0.1);
+            border: 1px solid rgba(0, 234, 255, 0.1);
+        }
+
+        .reviews-section h2 {
+            font-size: clamp(1.5rem, 3vw, 2.2rem);
+            color: var(--primary);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 2.5rem;
+            font-family: 'Orbitron', sans-serif;
+        }
+
+        .review-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            justify-content: center;
+        }
+
+        .review-card {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 1.5rem;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0, 255, 255, 0.1);
+            text-align: left;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .review-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 40px rgba(0, 234, 255, 0.3);
+        }
+
+        .review-card .stars {
+            color: gold;
+            margin-bottom: 1rem;
+            font-size: 1rem;
+        }
+
+        .review-card p {
+            font-size: 0.95rem;
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+            font-style: italic;
+        }
+
+        .review-card .reviewer {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+        }
+
+        .review-card .reviewer img {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid var(--primary);
+        }
+
+        .review-card .reviewer-info h4 {
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--secondary);
+            margin-bottom: 0.2rem;
+        }
+
+        .review-card .reviewer-info p {
+            font-size: 0.8rem;
+            color: rgba(255, 255, 255, 0.7);
+            margin: 0;
+            font-style: normal;
+        }
+
+        /* Contact Section */
+        .contact-section {
+            background: rgba(15, 15, 31, 0.9);
+            padding: 4rem 1.5rem;
+            text-align: center;
+            margin: 3rem auto;
+            max-width: 1200px;
+            border-radius: 12px;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 15px 50px rgba(0, 255, 255, 0.1);
+            border: 1px solid rgba(0, 234, 255, 0.1);
+        }
+
+        .contact-section h2 {
+            font-size: clamp(1.5rem, 3vw, 2.2rem);
+            color: var(--primary);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 1.5rem;
+            font-family: 'Orbitron', sans-serif;
+        }
+
+        .contact-section p {
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-top: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .social-links a {
+            color: white;
+            font-size: 1.5rem;
+            transition: var(--transition);
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        .social-links a:hover {
+            transform: translateY(-5px);
+            color: var(--primary);
+            background: rgba(0, 234, 255, 0.2);
+            box-shadow: 0 5px 15px rgba(0, 234, 255, 0.3);
+        }
+
+        /* Footer */
+        footer {
+            background-color: rgba(0, 0, 0, 0.9);
+            color: white;
+            text-align: center;
+            padding: 2rem 1rem;
+            font-size: 0.9rem;
+            border-top: 1px solid rgba(0, 234, 255, 0.1);
+            backdrop-filter: blur(5px);
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            text-align: left;
+        }
+
+        .footer-column h3 {
+            color: var(--primary);
+            margin-bottom: 1rem;
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.1rem;
+        }
+
+        .footer-column ul {
+            list-style: none;
+        }
+
+        .footer-column ul li {
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-column a {
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .footer-column a:hover {
+            color: var(--primary);
+            padding-left: 5px;
+        }
+
+        .copyright {
+            margin-top: 2rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        /* Chat Widget Styles */
+        .chat-toggle {
+            position: fixed;
+            bottom: 1.5rem;
+            right: 1.5rem;
+            background: var(--gradient);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+            cursor: pointer;
+            box-shadow: 0 0 20px rgba(0, 234, 255, 0.7);
+            z-index: 9999;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 1.5rem;
+            transition: var(--transition);
+        }
+
+        .chat-toggle:hover {
+            transform: scale(1.1) rotate(10deg);
+            box-shadow: 0 0 30px var(--primary), 0 0 40px var(--secondary);
+        }
+
+        .chat-widget {
+            position: fixed;
+            bottom: 5.5rem;
+            right: 1.5rem;
+            width: 90%;
+            max-width: 350px;
+            background: rgba(10, 10, 20, 0.95);
+            border: 1px solid var(--primary);
+            border-radius: 12px;
+            display: flex;
+            flex-direction: column;
+            box-shadow: 0 0 30px rgba(0, 234, 255, 0.3);
+            z-index: 9999;
+            overflow: hidden;
+            transform: translateY(20px);
+            opacity: 0;
+            visibility: hidden;
+            transition: var(--transition);
+        }
+
+        .chat-widget.active {
+            transform: translateY(0);
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .chat-header {
+            background: var(--gradient);
+            color: white;
+            padding: 1rem;
+            font-weight: bold;
+            text-align: center;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 1rem;
+        }
+
+        .chat-header button {
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.2rem;
+            cursor: pointer;
+        }
+
+        .chat-messages {
+            padding: 1rem;
+            flex: 1;
+            overflow-y: auto;
+            max-height: 300px;
+            display: flex;
+            flex-direction: column;
+            gap: 0.8rem;
+        }
+
+        .message {
+            max-width: 80%;
+            padding: 0.8rem 1rem;
+            border-radius: 12px;
+            font-size: 0.9rem;
+            line-height: 1.4;
+        }
+
+        .user-message {
+            align-self: flex-end;
+            background: rgba(0, 234, 255, 0.2);
+            border-bottom-right-radius: 0;
+            color: white;
+        }
+
+        .bot-message {
+            align-self: flex-start;
+            background: rgba(255, 255, 255, 0.1);
+            border-bottom-left-radius: 0;
+        }
+
+        .chat-input {
+            display: flex;
+            border-top: 1px solid rgba(0, 234, 255, 0.3);
+            padding: 0.5rem;
+        }
+
+        .chat-input input {
+            flex: 1;
+            padding: 0.8rem;
+            border: none;
+            outline: none;
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            font-size: 0.9rem;
+            border-radius: 8px 0 0 8px;
+        }
+
+        .chat-input button {
+            background: var(--primary);
+            color: #000;
+            padding: 0 1.2rem;
+            border: none;
+            cursor: pointer;
+            font-weight: bold;
+            font-size: 0.9rem;
+            border-radius: 0 8px 8px 0;
+            transition: var(--transition);
+        }
+
+        .chat-input button:hover {
+            background: var(--secondary);
+            color: #fff;
+        }
+
+        /* Scrollbar Styling */
+        ::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: var(--primary);
+            border-radius: 3px;
+        }
+
+        /* Mobile-specific adjustments */
+        @media (max-width: 768px) {
+            .menu-toggle {
+                display: block;
+            }
+
+            .nav-links {
+                position: fixed;
+                top: 0;
+                right: -100%;
+                width: 80%;
+                max-width: 300px;
+                height: 100vh;
+                background: rgba(10, 10, 20, 0.98);
+                flex-direction: column;
+                justify-content: center;
+                gap: 1.5rem;
+                transition: var(--transition);
+                z-index: 1000;
+                backdrop-filter: blur(10px);
+                border-left: 1px solid rgba(0, 234, 255, 0.2);
+                padding: 2rem;
+            }
+
+            .nav-links.active {
+                right: 0;
+            }
+
+            .nav-links a {
+                font-size: 1.1rem;
+                padding: 0.8rem 1.2rem;
+                width: 100%;
+                text-align: center;
+            }
+
+            header {
+                padding: 7rem 1rem 4rem;
+            }
+
+            .hosting-plans, 
+            .reviews-section,
+            .contact-section {
+                margin-left: 1rem;
+                margin-right: 1rem;
+                padding: 2.5rem 1rem;
+            }
+
+            .pricing-table {
+                grid-template-columns: 1fr;
+            }
+
+            .chat-widget {
+                width: calc(100% - 3rem);
+                max-width: none;
+            }
+        }
+
+        /* Tablet adjustments */
+        @media (min-width: 769px) and (max-width: 1024px) {
+            .pricing-table {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="top-bar">
+        <div class="logo">
+            <a href="#">
+                <img src="images/logo.png" alt="Matic Host Logo">
+            </a>
+        </div>
+        <button class="menu-toggle" id="menuToggle">
+            <i class="fas fa-bars"></i>
+        </button>
+        <nav class="nav-links" id="navLinks">
+            <a href="https://matichost.site"><i class="fas fa-home"></i> Home</a>
+            <a href="#"><i class="fas fa-tags"></i> Pricing</a>
+            <a href="#"><i class="fas fa-info-circle"></i> About Us</a>
+            <a href="#"><i class="fas fa-file-alt"></i> Policy</a>
+            <a href="#" class="ddos-link"><i class="fas fa-sign-in-alt"></i> Login</a>
+        </nav>
+    </div>
+
+    <!-- Chat Toggle Button -->
+    <button class="chat-toggle" id="chatToggle">
+        <i class="fas fa-comment-dots"></i>
+    </button>
+
+    <!-- Chat Widget -->
+    <div class="chat-widget" id="chatWidget">
+        <div class="chat-header">
+            MaticHost AI Support
+            <button id="closeChat"><i class="fas fa-times"></i></button>
+        </div>
+        <div class="chat-messages" id="chatMessages">
+            <div class="message bot-message">
+                Hello! 👋 How can I help you with  hosting today?
+            </div>
+        </div>
+        <div class="chat-input">
+            <input type="text" id="chatInput" placeholder="Type your message..." onkeydown="if(event.key==='Enter') sendMessage()">
+            <button onclick="sendMessage()"><i class="fas fa-paper-plane"></i></button>
+        </div>
+    </div>
+
+    <div id="particles-js" class="particle-background"></div>
+
+    <header>
+        <h1>Premium Hosting Solutions</h1>
+        <p>Experience blazing-fast performance with our cutting-edge hosting infrastructure, designed for gamers and developers who demand the best.</p>
+        <button class="cta-button" onclick="window.open('https://MaticHost.site/minecraft.html')">Get Started</button>
+    </header>
+
+    <main>
+        <div class="hosting-plans" id="pricing">
+            <h2>Our Hosting Plans</h2>
+            <div class="pricing-table">
+                <div class="pricing-plan">
+                    <h3><i class="fas fa-cube"></i> Minecraft Hosting</h3>
+                    <p>Perfect for gamers and server owners</p>
+                    <div class="price">75₹/month</div>
+                    <ul class="features">
+                        <li>Unlimited Player Slots</li>
+                        <li>Instant Setup</li>
+                        <li>DDoS Protection</li>
+                        <li>24/7 Support</li>
+                    </ul>
+                    <button class="cta-button" onclick="window.open('https://legacynodes.host//minecraft%20plans.html')">Get Started</button>
+                </div>
+                <div class="pricing-plan">
+                    <h3><i class="fas fa-server"></i> VPS Hosting</h3>
+                    <p>Powerful virtual private servers</p>
+                    <div class="price">660₹/month</div>
+                    <ul class="features">
+                        <li>SSD Storage</li>
+                        <li>Root Access</li>
+                        <li>99.9% Uptime</li>
+                        <li>Global Locations</li>
+                    </ul>
+                    <button class="cta-button" onclick="window.open('https://legacynodes.host/vps.html')">Get Started</button>
+                </div>
+                <div class="pricing-plan">
+                    <h3><i class="fas fa-robot"></i> Bot Hosting</h3>
+                    <p>Reliable hosting for your bots</p>
+                    <div class="price">85₹/month</div>
+                    <ul class="features">
+                        <li>24/7 Uptime</li>
+                        <li>Easy Management</li>
+                        <li>Automatic Backups</li>
+                        <li>Fast Support</li>
+                    </ul>
+                    <button class="cta-button" onclick="window.open('https://legacynodes.host/bot.html')">Get Started</button>
+                </div>
+                <div class="pricing-plan">
+                    <h3><i class="fas fa-globe"></i> Domain Registration</h3>
+                    <p>Secure your online identity</p>
+                    <div class="price">270₹/year</div>
+                    <ul class="features">
+                        <li>Free Privacy Protection</li>
+                        <li>Easy Management</li>
+                        <li>Domain Locking</li>
+                        <li>24/7 Support</li>
+                    </ul>
+                    <button class="cta-button" onclick="window.open('#'')">Get Started</button>
+                </div>
+                <div class="pricing-plan">
+                    <h3><i class="fas fa-shield-alt"></i> DDoS Protection</h3>
+                    <p>Keep your services online</p>
+                    <div class="price">3000₹/month</div>
+                    <ul class="features">
+                        <li>Enterprise-grade Protection</li>
+                        <li>Real-time Monitoring</li>
+                        <li>Instant Mitigation</li>
+                        <li>24/7 Security Team</li>
+                    </ul>
+                    <button class="cta-button" onclick="window.open('https://matichost.site/ddos%20protection.html')">Get Started</button>
+                </div>
+                
+                <div class="pricing-plan">
+                    <h3><i class="fa-solid fa-earth-asia"></i> Web Hosting</h3>
+                    <p>Keep your services online</p>
+                    <div class="price">1000₹/month</div>
+                    <ul class="features">
+                        <li>Enterprise-grade Protection</li>
+                        <li>Real-time Monitoring</li>
+                        <li>Instant Mitigation</li>
+                        <li>24/7 Security Team</li>
+                    </ul>
+                    <button class="cta-button" onclick="('#')">Coming Soon</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- REVIEWS SECTION -->
+        <div class="reviews-section">
+            <h2>Trusted By Thousands</h2>
+            <div class="review-cards">
+                <div class="review-card">
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p>"Legacy Nodes offers affordable, lag-free Minecraft hosting with excellent performance. Their fast customer support ensures a smooth experience. Highly recommended!"</p>
+                    <div class="reviewer">
+                        <img src="images/byte.png" alt="ByteDaddy">
+                        <div class="reviewer-info">
+                            <h4>ByteDaddy</h4>
+                            <p>Minecraft Server Owner</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="review-card">
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p>"Overall rating 5/5, support 5/5. Very cheap hosting with great performance. I've tried many hosts and Legacy Nodes is by far the best value."</p>
+                    <div class="reviewer">
+                        <img src="images/a_004a26c21dd03103d312ae31b4985e77.gif" alt="ZeusSahil">
+                        <div class="reviewer-info">
+                            <h4>ZeusSahil</h4>
+                            <p>Discord Bot Developer</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="review-card">
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                    </div>
+                    <p>"Yes sir, no problems at all. Everything works perfectly. The server performance is too much good. Very happy with the service!"</p>
+                    <div class="reviewer">
+                        <img src="images/1.png" alt="DARKNIGHHT">
+                        <div class="reviewer-info">
+                            <h4>DARKNIGHHT</h4>
+                            <p>Game Server Owner</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- CONTACT SECTION -->
+        <div class="contact-section">
+            <h2>Ready To Get Started?</h2>
+            <p>Join thousands of satisfied customers who trust Legacy Nodes for their hosting needs. Our support team is available 24/7 to help you with any questions.</p>
+            <button class="cta-button" onclick="window.open('https://matichost.site/legacy%20nodes%20social%20media.html')">Contact Us</button>
+            
+            <div class="social-links">
+                <a href="https://discord.gg/WuQUUH3BWs" title="Discord"><i class="fab fa-discord"></i></a>
+                <a href="#" title="Twitter"><i class="fab fa-twitter"></i></a>
+                <a href="#" title="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="#" title="Facebook"><i class="fab fa-facebook"></i></a>
+                <a href="#" title="YouTube"><i class="fab fa-youtube"></i></a>
+            </div>
+        </div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-column">
+                <h3>Services</h3>
+                <ul>
+                    <li><a href="https://matichost.site//minecraft%20plans.html">Minecraft Hosting</a></li>
+                    <li><a href="https://matichost.site/vps.html">VPS Hosting</a></li>
+                    <li><a href="https://matichost.site//bot%20hosting.html">Bot Hosting</a></li>
+                    <li><a href="https://matichost.site/domain%20registration.html">Domain Registration</a></li>
+                    <li><a href="https://matichost.site/ddos%20protection.html">DDoS Protection</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Company</h3>
+                <ul>
+                    <li><a href="https://matichost.site/About%20us.html">About Us</a></li>
+                    <li><a href="https://matichost.site/About%20us.html">Our Team</a></li>
+                    <li><a href="https://matichost.site/policy.html">Policy</a></li>
+                    <li><a href="https://matichost.site/dcd.gg/-matichost">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Legal</h3>
+                <ul>
+                    <li><a href="https://matichost.site/policy.html">Privacy Policy</a></li>
+                    <li><a href="https://matichost.site/policy.html">Terms of Service</a></li>
+                    <li><a href="https://matichost.site/policy.html">Refund Policy</a></li>
+                    <li><a href="https://matichost.site/policy.html">Acceptable Use</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="copyright">
+            � 2023 Legacy Nodes. All rights reserved.
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Menu Toggle
+        const menuToggle = document.getElementById('menuToggle');
+        const navLinks = document.getElementById('navLinks');
+        
+        menuToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            menuToggle.innerHTML = navLinks.classList.contains('active') ? 
+                '<i class="fas fa-times"></i>' : '<i class="fas fa-bars"></i>';
+        });
+
+        // Chat Widget Toggle
+        const chatToggle = document.getElementById('chatToggle');
+        const chatWidget = document.getElementById('chatWidget');
+        const closeChat = document.getElementById('closeChat');
+        
+        chatToggle.addEventListener('click', () => {
+            chatWidget.classList.toggle('active');
+        });
+        
+        closeChat.addEventListener('click', () => {
+            chatWidget.classList.remove('active');
+        });
+
+        // Close menu when clicking on a link (for mobile)
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+                menuToggle.innerHTML = '<i class="fas fa-bars"></i>';
+            });
+        });
+
+        // Simple chat functionality
+        function sendMessage() {
+            const input = document.getElementById('chatInput');
+            const messages = document.getElementById('chatMessages');
+            
+            if (input.value.trim() === '') return;
+            
+            // Add user message
+            const userMsg = document.createElement('div');
+            userMsg.className = 'message user-message';
+            userMsg.textContent = input.value;
+            messages.appendChild(userMsg);
+            
+            // Clear input
+            input.value = '';
+            
+            // Scroll to bottom
+            messages.scrollTop = messages.scrollHeight;
+            
+            // Simulate bot response after a delay
+            setTimeout(() => {
+                const botMsg = document.createElement('div');
+                botMsg.className = 'message bot-message';
+                botMsg.textContent = getBotResponse();
+                messages.appendChild(botMsg);
+                messages.scrollTop = messages.scrollHeight;
+            }, 1000);
+        }
+        
+        function getBotResponse() {
+            const responses = [
+                "Thanks for your message! Our support team will get back to you soon.",
+                "We're here to help! What else would you like to know?",
+                "For faster support, please join our Discord server.",
+                "That's a great question! Let me connect you with a human agent.",
+                "I've noted your query. Our team typically responds within 1 hour."
+            ];
+            return responses[Math.floor(Math.random() * responses.length)];
+        }
+
+        // Initialize particles.js
+        particlesJS('particles-js', {
+            particles: {
+                number: { value: 80, density: { enable: true, value_area: 800 } },
+                color: { value: "#00eaff" },
+                shape: { type: "circle" },
+                opacity: { value: 0.5, random: true },
+                size: { value: 3, random: true },
+                line_linked: { enable: true, distance: 150, color: "#00eaff", opacity: 0.4, width: 1 },
+                move: { enable: true, speed: 2, direction: "none", random: true, straight: false, out_mode: "out" }
+            },
+            interactivity: {
+                detect_on: "canvas",
+                events: {
+                    onhover: { enable: true, mode: "grab" },
+                    onclick: { enable: true, mode: "push" }
+                }
+            }
+        });
+    </script>
+
+</body></html>
