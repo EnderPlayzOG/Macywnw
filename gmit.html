@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vps Hosting</title>
+    <style>
+        /* General Styles */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #0d1b2a; /* Dark Blue */
+            margin: 0;
+            padding: 0;
+            text-align: center;
+            color: white;
+        }
+
+        /* Header */
+        header {
+            padding: 20px;
+            background: #1b263b;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            animation: fadeIn 1.5s ease-in-out;
+        }
+
+        .logo {
+            width: 40px;
+            height: 40px;
+        }
+
+        .brand {
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .brand span {
+            color: #00aaff;
+        }
+
+        /* Plans Section */
+        .plans {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            padding: 20px;
+        }
+
+        /* Individual Plan Box */
+        .plan {
+            background: #112b4b;
+            padding: 20px;
+            width: 250px;
+            border-radius: 8px;
+            text-align: center;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+            transform: scale(1);
+            transition: transform 0.3s ease-in-out;
+            animation: fadeInUp 1s ease-in-out;
+        }
+
+        .plan:hover {
+            transform: scale(1.05);
+        }
+
+        .plan img {
+            width: 60px;
+        }
+
+        .plan h2 {
+            font-size: 22px;
+            margin: 10px 0;
+        }
+
+        .plan p {
+            font-size: 18px;
+            font-weight: bold;
+            color: #00aaff;
+        }
+
+        .plan ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .plan ul li {
+            margin: 5px 0;
+            font-size: 14px;
+        }
+
+        /* Order Button */
+        .order-btn {
+            display: inline-block;
+            margin-top: 10px;
+            padding: 10px 15px;
+            background: #007bff;
+            border: none;
+            color: white;
+            cursor: pointer;
+            border-radius: 5px;
+            font-size: 14px;
+            text-decoration: none;
+            box-shadow: 0 0 10px rgba(0, 123, 255, 0.8);
+            transition: all 0.3s ease-in-out;
+        }
+
+        .order-btn:hover {
+            background: #0056b3;
+            box-shadow: 0 0 20px rgba(0, 123, 255, 1);
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {ì
+                opacity: 1;
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <img src="https://i.imgur.com/XEMrbqn.jpeg" alt="Logo" class="logo">
+        <div class="brand">FUSION <span>CLOUD</span></div>
+        <p>Germany - Intel Gold<p>
+    </header>
+
+<a href="vps.html" class="order-btn">India - Intel Xeon</a>
+<a href="inamd.html" class="order-btn">India - AMD Epyc</a>
+<a href="gmit.html" class="order-btn">Germany - Intel Gold</a>
+<a href="gmry.html" class="order-btn">Germany - Ryzen 9</a>
+        
+    <section class="plans">
+        <div class="plan">
+            <img src="https://i.imgur.com/EG8SRSp.png" alt="spider.png">
+            <h2>Spider Vps</h2>
+            <p>$6.00/monthly</p>
+            <ul> 
+                <li>Intel® Xeon® Gold 6150 (2 vCores)</li>
+                <li>2.70 GHz Base (3.70 GHz Turbo)</li>
+                <li>8 GB DDR4 ECC Memory</li>
+                <li>50 GB NVMe SSD Storage</li>
+                <li>Unmetered Bandwidth (1 Gbps)</li>
+                <li>Frankfurt, DE</li>
+                <li>Combatton DDoS Protection</li>
+            </ul>
+            <a href="payment.html" class="order-btn">Order Now</a>
+        </div>
+            
+        <div class="plan">
+            <img src="https://i.imgur.com/tdcQHj6.png" alt="venom.png">
+            <h2>Venom Vps</h2>
+            <p>$10.00/monthly</p>
+            <ul>
+                 <li>Intel® Xeon® Gold 6150 (4 vCores)</li>
+                 <li>2.70 GHz Base (3.70 GHz Turbo)</li>
+                 <li>16 GB DDR4 ECC Memory</li>
+                 <li>150 GB NVMe SSD Storage</li>
+                 <li>Unmetered Bandwidth (1 Gbps)</li>
+                 <li>Frankfurt, DE</li>
+                 <li>Combatton DDoS Protection</li>
+            </ul>
+            <a href="payment.html" < class="order-btn">Order Now</a>
+        </div>
+
+        <div class="plan">
+            <img src="https://i.imgur.com/i71oyAP.png" alt="hulk.png">
+            <h2>Hulk Vps</h2>
+            <p>$20.00/monthly</p>
+            <ul>
+                <li>Intel® Xeon® Gold 6150 (6 vCores)</li>
+                <li>2.70 GHz Base (3.70 GHz Turbo)</li>
+                <li>36 GB DDR4 ECC Memory</li>
+                <li>250 GB NVMe SSD Storage</li>
+                <li>Unmetered Bandwidth (1 Gbps)</li>
+                <li>Frankfurt, DE</li>
+                <li>Combatton DDoS Protection</li>
+            </ul>
+            <a href="payment.html" class="order-btn">Order Now</a>
+        </div>
+
+        <div class="plan">
+            <img src="https://i.imgur.com/vFIchvj.png" alt="captain.png">
+            <h2>Captain Vps</h2>
+            <p>$26.00/monthly</p>
+            <ul>
+                <li>Intel® Xeon® Gold 6150 (8 vCores)</li>
+                <li>2.70 GHz Base (3.70 GHz Turbo)</li>
+                <li>48 GB DDR4 ECC Memory</li>
+                <li>300 GB NVMe SSD Storage</li>
+                <li>Unmetered Bandwidth (1 Gbps)</li>
+                <li>Frankfurt, DE</li>
+                <li>Combatton DDoS Protection</li>
+            </ul>
+            <a href="payment.html" class="order-btn">Order Now</a>
+        </div>
+        
+  <p>© Copyright 2025 FUSION CLOUD. All Rights Reserved</p>
+        
+</body>
+</html>

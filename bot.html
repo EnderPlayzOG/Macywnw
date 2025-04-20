@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Discord Bot Hosting</title>
+    <style>
+        /* General Styles */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #0d1b2a; /* Dark Blue */
+            margin: 0;
+            padding: 0;
+            text-align: center;
+            color: white;
+        }
+
+        /* Header */
+        header {
+            padding: 20px;
+            background: #1b263b;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            animation: fadeIn 1.5s ease-in-out;
+        }
+
+        .logo {
+            width: 40px;
+            height: 40px;
+        }
+
+        .brand {
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .brand span {
+            color: #00aaff;
+        }
+
+        /* Plans Section */
+        .plans {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            padding: 20px;
+        }
+
+        /* Individual Plan Box */
+        .plan {
+            background: #1b263b;
+            padding: 20px;
+            width: 250px;
+            border-radius: 8px;
+            text-align: center;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+            transform: scale(1);
+            transition: transform 0.3s ease-in-out;
+            animation: fadeInUp 1s ease-in-out;
+        }
+
+        .plan:hover {
+            transform: scale(1.05);
+        }
+
+        .plan img {
+            width: 60px;
+        }
+
+        .plan h2 {
+            font-size: 22px;
+            margin: 10px 0;
+        }
+
+        .plan p {
+            font-size: 18px;
+            font-weight: bold;
+            color: #00aaff;
+        }
+
+        .plan ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .plan ul li {
+            margin: 5px 0;
+            font-size: 14px;
+        }
+
+        /* Order Button */
+        .order-btn {
+            display: inline-block;
+            margin-top: 10px;
+            padding: 10px 15px;
+            background: #007bff;
+            border: none;
+            color: white;
+            cursor: pointer;
+            border-radius: 5px;
+            font-size: 14px;
+            text-decoration: none;
+            box-shadow: 0 0 10px rgba(0, 123, 255, 0.8);
+            transition: all 0.3s ease-in-out;
+        }
+
+        .order-btn:hover {
+            background: #0056b3;
+            box-shadow: 0 0 20px rgba(0, 123, 255, 1);
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {ì
+                opacity: 1;
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <img src="https://cdn.discordapp.com/attachments/1335260436211433552/1354488555770089764/1b042217-9a91-4d6c-9775-3a290d33bde4.webp?ex=67e62204&is=67e4d084&hm=72940851bae4003984559a39c32414a81cbb245275c3593d2ce36a8b975d07cf&" alt="Fusion Cloud Logo" class="logo">
+        <div class="brand">FUSION <span>CLOUD</span></div>
+        <p>Minecraft Hosting</p>
+    </header>
+
+    <section class="plans">
+        <div class="plan">
+            <img src="https://cdn.discordapp.com/attachments/1335260436211433552/1355210284070994090/zombies.webp?ex=67e8196e&is=67e6c7ee&hm=8cc9732c2b3ae695eb0c826ac9d9fca1708d8d914ad870909b96b692fb5b9e64&" alt="oak.png">
+            <h2>Oak Plan</h2>
+            <p>₹30/month</p>
+            <ul> 
+                <li>2GB DDR4 RAM</li>
+                <li>200% CPU</li>
+                <li>5GB DISK</li>
+                <li>1 Backup</li>
+                <li>0 DATABASE</li>
+                <li>0 ALLOWNATION</li>
+                <li>Ryzen 7</li>
+            </ul>
+            <a href="payment.html" class="order-btn">Order Now</a>
+        </div>
+
+        <div class="plan">
+            <img src="https://i.imgur.com/rI7CNl2.png" alt="Spruce.png">
+            <h2>Spruce Plan</h2>
+            <p>₹50/month</p>
+            <ul>
+                 <li>3GB DDR4 RAM</li>
+                 <li>300% CPU</li>
+                 <li>10GB DISK</li>
+                 <li>1 BACKUP</li>
+                 <li>0 DATABASE</li>
+                 <li>0 ALLOWNATION</li>
+                 <li>Ryzen 7</li>
+            </ul>
+            <a href="payment.html" < class="order-btn">Order Now</a>
+        </div>
+
+        <div class="plan">
+            <img src="https://i.imgur.com/HVAqAH9.png" alt="Acacia">
+            <h2>Acacia Plan</h2>
+            <p>₹100/month</p>
+            <ul>
+                <li>4GB DDR4 RAM</li>
+                <li>400% CPU</li>
+                <li>15GB DISK</li>
+                <li>2 BACKUP</li>
+                <li>1 DATABASE</li>
+                <li>1 ALLOWNATION</li>
+                <li>Ryzen 7</li>
+            </ul>
+            <a href="payment.html" class="order-btn">Order Now</a>
+        </div>
+
+        <div class="plan">
+            <img src="https://i.imgur.com/mfySC9q.png" alt="Pale Oak.png">
+            <h2>Pale Oak Plan</h2>
+            <p>₹170/month</p>
+            <ul>
+                <li>5GB DDR4 RAM</li>
+                <li>500% CPU</li>
+                <li>20GB DISK</li>
+                <li>3 BACKUP</li>
+                <li>2 DATABASE</li>
+                <li>2 ALLOWNATION</li>
+                <li>Ryzen 7</li>
+            </ul>
+            <a href="payment.html" class="order-btn">Order Now</a>
+        </div>
+
+        <!-- NEW PLANS -->
+        <div class="plan">
+            <img src="https://i.imgur.com/cv174Pf.png" alt="Birch.png">
+            <h2>Birch Plan</h2>
+            <p>₹280/month</p>
+            <ul>
+                <li>6GB DDR4 RAM</li>
+                <li>600% CPU</li>
+                <li>25GB DISK</li>
+                <li>3 BACKUP</li>
+                <li>3 DATABASE</li>
+                <li>3 ALLOWNATION</li>
+                <li>Ryzen7</li>
+            </ul>
+            <a href="payment.html" class="order-btn">Order Now</a>
+        </div>
+
+        <div class="plan">
+            <img src="https://i.imgur.com/XcybVHc.png" alt="Jungle">
+            <h2>Jungle Plan</h2>
+            <p>₹299/month</p>
+            <ul>
+                <li>7GB DDR4 RAM</li>
+                <li>500% CPU</li>
+                <li>30GB DISK</li>
+                <li>3 BACKUP</li>
+                <li>3 DATABASE</li>
+                <li>3 ALLOWNATION</li>
+                <li>Ryzen9</li>
+            </ul>
+            <a href="payment.html" class="order-btn">Order Now</a>
+        </div>
+
+        <div class="plan">
+            <img src="https://i.imgur.com/ii5Hdyt.png" alt="Mangrove.png">
+            <h2>Mangrove</h2>
+            <p>₹390/month</p>
+            <ul>
+                <li>9GB DDR4 RAM</li>
+                <li>600% CPU </li>
+                <li>20GB DISK</li>
+                <li>4 BACKUP</li>
+                <li>4 DATABASE</li>
+                <li>4 ALLOWNATION</li>
+                <li>Ryzen9</li>
+            </ul>
+            <a href="payment.html" class="order-btn">Order Now</a>
+        </div>
+    </section> 
+        
+  <p>© Copyright 2025 FUSION CLOUD All Rights Reserved</p>
+        
+</body>
+</html>
